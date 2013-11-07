@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:adsmogo="http://www.adsmogo.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bk_start"
+    tools:context=".CShemeSelect" >
+
+<!--     <com.adsmogo.adview.AdsMogoLayout -->
+<!--         android:id="@+id/adsMogoView" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_alignParentBottom="true" -->
+<!--         adsmogo:appid="1ec52e5a4d394a17a4ca19332a2caf74" > -->
+<!--     </com.adsmogo.adview.AdsMogoLayout> -->
+    
+    <GridView
+        android:id="@+id/gridView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:drawSelectorOnTop="true"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:listSelector="@drawable/grid_selector"
+        android:numColumns="2"
+        android:verticalSpacing="32dp" >
+
+    </GridView>
+
+    <TextView
+        android:id="@+id/txtBean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtNote"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1"
+        android:text="beanNum"
+        android:textColor="@color/textOrange"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:text="打开每个场景都会花费一些金豆哦"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="14sp" />
+    
+</RelativeLayout>

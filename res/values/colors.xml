@@ -1,0 +1,14 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="backgroud">#222</color>
+    <color name="textOrange">#3f48cc</color>
+    <color name="btnGreen">#98fb98</color>
+    <color name="clrYellow">#ffc904</color>
+    <color name="tile1">#ff8c00</color>
+    <color name="tile2">#eb7226</color>
+    <color name="tile3">#65bf10</color>
+    <color name="tile4">#034787</color>
+    <color name="tile5">#00bbe2</color>
+
+</resources>

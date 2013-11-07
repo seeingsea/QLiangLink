@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">连连看美女</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_csheme_select">选场景</string>
+    <string name="title_activity_clevel_select">CLevelSelect</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_cuser_page">CUserPage</string>
+    <string name="title_activity_game_page">GamePage</string>
+    <string name="casual">休闲模式</string>
+    <string name="quests">闯关模式</string>
+    <string name="we">我的金豆</string>
+    <string name="title_activity_cimage_browse">CImageBrowse</string>
+    <string name="title_activity_cmulti_ads_page">CMultiAdsPage</string>
+
+</resources>

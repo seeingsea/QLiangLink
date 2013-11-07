@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bk_start"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".StartPage" >
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/tile3"
+        android:minHeight="60dp"
+        android:onClick="onBtnQuests"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="@string/quests"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="8dp"
+        android:background="@color/tile4"
+        android:minHeight="60dp"
+        android:onClick="onBtnMe"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="@string/we"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/linktext" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:background="@color/tile1"
+        android:ellipsize="none"
+        android:minHeight="60dp"
+        android:onClick="onBtnCasul"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="@string/casual"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
