@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jk.haibian.qlianglink"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+
+    <!-- 连接网络权限INTERNET ，用于请求积分墙(必须) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 读取手机基本信息权限READ_PHONE_STATE，用于精确统计用户的机型等信息(必须) -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取网络信息权限ACCESS_NETWORK_STATE，用于识别gprs网络的接入点的情况(必须) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取用户地理信息权限，用于帮助精确统计开发者的程序发布之后的用户分布情况 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 获取当前wifi的状态及读取mac地址所需 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 读写sd 卡的权限，用于缓存广告所用到的图片，节省流量，并可获得更好的用户体验 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 按效果付费功能需要的权限,mogo会使用该权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name="jk.haibian.qlianglink.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/qllink"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="jk.haibian.qlianglink.StartPage"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="jk.haibian.qlianglink.CShemeSelect"
+            android:label="@string/title_activity_csheme_select"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="jk.haibian.qlianglink.CLevelSelect"
+            android:label="@string/title_activity_clevel_select"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="jk.haibian.qlianglink.CUserPage"
+            android:label="@string/title_activity_cuser_page"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="jk.haibian.qlianglink.CGamePage"
+            android:label="@string/title_activity_game_page"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="jk.haibian.qlianglink.CImageBrowse"
+            android:label="@string/title_activity_cimage_browse"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 声明Mogo全插屏所用的Activity -->
+        <activity
+            android:name="com.adsmogo.adview.AdsMogoInterstitialActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <!-- 声明Mogo的Activity -->
+        <activity
+            android:name="com.adsmogo.adview.AdsMogoWebView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.adsmogo.splash.AdsMogoSplashWebView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.adsmogo.mriad.view.AdsMogoActionHandler"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 注册Service，应用下载所需 -->
+        <service
+            android:name="com.adsmogo.controller.service.UpdateService"
+            android:exported="true"
+            android:process=":remote" />
+        <!-- 注册Service，应用被安装所用 -->
+        <service
+            android:name="com.adsmogo.controller.service.CountService"
+            android:exported="true"
+            android:process=":remote" />
+
+        <!-- 注册百度移动联盟广告AppActivity -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <!-- 您从百度移动联盟网站获取的APPSID -->
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="a2337987" />
+        <!-- 您从百度移动联盟网站获取的计费名 -->
+        <meta-data
+            android:name="BaiduMobAd_APP_SEC"
+            android:value="a2337987_13b50d6f" />
+
+        <!-- 艾德思奇广告点击后，下载应用时所需的 service，必选 -->
+        <service
+            android:name="com.mobisage.android.MobiSageApkService"
+            android:enabled="true" >
+        </service>
+        <!-- 艾德思奇广告点击后，打开 Landing Site 时使用的 Activity，必选 -->
+        <activity
+            android:name="com.mobisage.android.MobiSageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <!-- 艾德思奇插屏广告 activity，使用插屏时必选 -->
+        <activity
+            android:name="com.mobisage.android.MobiSageAdPosterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+
+        <!-- 声明AdMob的Activity -->
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <!-- 声明多盟的Activity -->
+        <activity
+            android:name="cn.domob.android.ads.DomobActivity"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- 有米积分墙   v4.02 （开始） -->
+        <activity
+            android:name="net.youmi.android.AdBrowser"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="net.youmi.android.AdService"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name="net.youmi.android.AdReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="net.youmi.android.offers.OffersReceiver"
+            android:exported="false" >
+        </receiver>
+        <!-- 有米积分墙   v4.02 （开始） -->
+
+
+        <!-- 百度积分墙 v1.0 (开始) -->
+        <activity
+            android:name="com.baidu.mobads.appoffers.OffersActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <!-- 百度积分墙 v1.0 (结束) -->
+        <activity
+            android:name="jk.haibian.qlianglink.CMultiAdsPage"
+            android:label="@string/title_activity_cmulti_ads_page" >
+        </activity>
+    </application>
+
+</manifest>
